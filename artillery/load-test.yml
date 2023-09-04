@@ -1,0 +1,17 @@
+config:
+  target: "http://elb-public-dns:80"
+  phases:
+    - duration: 60
+      arrivalRate: 1
+      rampTo: 3
+      name: Scaling test
+
+
+scenarios:
+  - flow:
+      - get:
+          url: "/info"
+      - get:
+          url: "/tools"
+    expect:
+      - statusCode: 200
