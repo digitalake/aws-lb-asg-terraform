@@ -9,17 +9,18 @@ variable "asg_image_id" {
 }
 
 variable "asg_instance_type" {
-  type = string
+  type        = string
   description = "the type ec2 type for asg"
-  default = "t2.micro"
+  default     = "t2.micro"
 }
 
 variable "allow_ssh_from_cidr" {
   default = ["0.0.0.0/0"]
+  description = "CIDR to access instances from (for testing)"
 }
 
 variable "naming_prefix" {
-  default = "asg-lab"
+  default     = "asg-lab"
   description = "prefix for resource naming"
 }
 
